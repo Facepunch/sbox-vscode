@@ -7,7 +7,7 @@
 		"type": "git",
 		"url": "https://github.com/Facepunch/sbox-vscode.git"
 	},
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
 		"vscode": "^1.46.0"
 	},
@@ -50,6 +50,17 @@
 							"requireExactSource": false
 						}
 					}
+				]
+			}
+		],
+		"languages": [
+			{
+				"id": "json",
+				"aliases": [
+					"S&box Addon"
+				],
+				"extensions": [
+					".addon"
 				]
 			}
 		],
