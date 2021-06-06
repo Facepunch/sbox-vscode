@@ -4,10 +4,11 @@ export class SboxDebugConfigProvider implements vscode.DebugConfigurationProvide
     public async provideDebugConfigurations(): Promise<vscode.DebugConfiguration[]> {
         return [
             {
-                name: "Attach to S&box",
-                type: "coreclr",
-                request: "attach",
-                processId: "${command:facepunch-sbox.pickProcess}",
+                name: 'Attach to S&box',
+                type: 'coreclr',
+                request: 'attach',
+                processId: '${command:facepunch-sbox.pickProcess}',
+                requireExactSource: false,
             },
         ];
     }

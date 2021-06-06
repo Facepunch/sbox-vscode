@@ -19,6 +19,9 @@
 		"onCommand:facepunch-sbox.pickProcess",
 		"onCommand:facepunch-sbox.attachDebugger"
 	],
+	"extensionDependencies": [
+		"ms-dotnettools.csharp"
+	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
@@ -43,10 +46,17 @@
 							"name": "Attach to S&box",
 							"request": "attach",
 							"type": "coreclr",
-							"processId": "^\"\\${command:facepunch-sbox.pickProcess}\""
+							"processId": "^\"\\${command:facepunch-sbox.pickProcess}\"",
+							"requireExactSource": false
 						}
 					}
 				]
+			}
+		],
+		"jsonValidation": [
+			{
+				"fileMatch": ".addon",
+				"url": "https://raw.githubusercontent.com/Facepunch/sbox-vscode/master/schema/sbox-addon.json"
 			}
 		]
 	},

@@ -14,5 +14,6 @@ export async function attachDebugger() {
         name: 'S&box Attach',
         request: 'attach',
         processId: sboxPid,
+        requireExactSource: false,
     });
 }

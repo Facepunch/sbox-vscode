@@ -1,0 +1,58 @@
+{
+  "title": "JSON schema for S&box addons",
+  "$schema": "http://json-schema.org/draft-04/schema#",
+
+  "type": "object",
+  "additionalProperties": true,
+
+  "properties": {
+    "name": {
+        "description": "The name of the addon",
+        "type": "string",
+        "minLength": 1
+    },
+    "sharedassets": {
+        "description": "Filesystem search string to locate assets which need to be sent from the server to clients",
+        "type": "string",
+        "minLength": 1
+    },
+    "depends": {
+        "description": "A list of addons that this addon depends on",
+        "type": "array",
+        "items": {
+            "type": "string",
+            "minLength": 1
+        },
+        "uniqueItems": true
+    },
+    "gamemodes": {
+        "description": "A list of gamemodes that this addon defines",
+        "type": "array",
+        "uniqueItems": true,
+        "items": {
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "The identifier of the gamemode",
+                    "type": "string",
+                    "minLength": 1
+                },
+                "title": {
+                    "description": "The visible name of the gamemode",
+                    "type": "string",
+                    "minLength": 1
+                },
+                "description": {
+                    "description": "A sentence or two which describe this gamemode",
+                    "type": "string"
+                },
+                "icon": {
+                    "description": "Filesystem path to the icon for this gamemode",
+                    "type": "string"
+                }
+            },
+            "required": [ "name", "title" ]
+        }
+    }
+  }
+}
