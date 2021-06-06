@@ -2,6 +2,11 @@
 	"name": "sbox-vscode",
 	"displayName": "S&box Tools",
 	"description": "Development tools for S&box",
+	"publisher": "facepunch",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Facepunch/sbox-vscode.git"
+	},
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.46.0"
