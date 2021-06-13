@@ -4,5 +4,5 @@
 
 ## Features
 * JSON validation for `.addon` files
-* Command to attach to attach a .NET debugger to S&box
+* Command to attach a .NET debugger to S&box
 * Provides a launch configuration to attach a .NET debugger to S&box
