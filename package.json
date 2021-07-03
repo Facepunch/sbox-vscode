@@ -55,7 +55,7 @@
 		],
 		"languages": [
 			{
-				"id": "json",
+				"id": "jsonc",
 				"aliases": [
 					"S&box Addon"
 				],
