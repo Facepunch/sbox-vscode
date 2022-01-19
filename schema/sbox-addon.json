@@ -6,53 +6,57 @@
   "additionalProperties": true,
 
   "properties": {
-    "name": {
-        "description": "The name of the addon",
+    "Title": {
+        "description": "The human readable title, for example \"Sandbox\", \"Counter - Strike\"",
         "type": "string",
         "minLength": 1
     },
-    "sharedassets": {
-        "description": "Filesystem search string to locate assets which need to be sent from the server to clients",
+    "SharedAssets": {
+        "description": "Filters which assets should be sent to the client. This isn't great, we will replace it.",
         "type": "string",
         "minLength": 1
     },
-    "depends": {
-        "description": "A list of addons that this addon depends on",
-        "type": "array",
-        "items": {
-            "type": "string",
-            "minLength": 1
-        },
-        "uniqueItems": true
+    "Type": {
+        "description": "The type of addon. Current valid values are \"game\"",
+        "type": "string",
+        "enum": ["game"]
     },
-    "gamemodes": {
-        "description": "A list of gamemodes that this addon defines",
-        "type": "array",
-        "uniqueItems": true,
-        "items": {
-            "type": "object",
-            "properties": {
-                "name": {
-                    "description": "The identifier of the gamemode",
-                    "type": "string",
-                    "minLength": 1
-                },
-                "title": {
-                    "description": "The visible name of the gamemode",
-                    "type": "string",
-                    "minLength": 1
-                },
-                "description": {
-                    "description": "A sentence or two which describe this gamemode",
-                    "type": "string"
-                },
-                "icon": {
-                    "description": "Filesystem path to the icon for this gamemode",
-                    "type": "string"
-                }
-            },
-            "required": [ "name", "title" ]
-        }
+    "Org": {
+        "description": "The ident of the org that owns this addon. Set to local if you don't have an org or are just testing.",
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^[a-z]+$"
+    },
+    "Ident": {
+        "description": "The ident of this addon. A short name with no special characters.",
+        "type": "string",
+        "minLength": 1,
+        "pattern": "^[a-z]+$"
+    },
+    "Schema": {
+        "description": ".The version of the addon file.",
+        "type": "integer"
+    },
+    "HasAssets": {
+        "description": "Set to true if this addon has models, materials etc",
+        "type": "boolean"
+    },
+    "AssetsPath": {
+        "description": "The relative path to your addon's assets. Leave this blank to use the root.",
+        "type": "string"
+    },
+    "HasCode": {
+        "description": "If this addon contains code, this should be set to true.",
+        "type": "boolean"
+    },
+    "CodePath": {
+        "description": "The relative path to your addon's code. The default is \"code\".",
+        "type": "string"
+    },
+    "RootNamespace": {
+        "description": "The default namespace to use in your addon's code. Some nerds like to change this. The default is \"Sandbox\".",
+        "type": "string"
     }
-  }
+  },
+  "required":["Title", "SharedAssets", "Type", "Org", "Ident", "Schema", "HasAssets", "AssetsPath", "HasCode", "CodePath", "RootNamespace"]
 }
